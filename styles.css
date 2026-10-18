@@ -1,0 +1,218 @@
+/* =========================================
+   NJ GOLF HUB - CLEAN EMERALD THEME
+   ========================================= */
+
+:root {
+  --bg-dark: #06110d;
+  --bg-card: rgba(12, 29, 22, 0.9);
+  --border-color: rgba(22, 51, 39, 0.9);
+  --accent-neon: #34d399;
+  --accent-green: #10b981;
+  --text-main: #f0fdf4;
+  --text-muted: #86efac;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  margin: 0;
+  padding-bottom: 80px;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--accent-neon);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  background: rgba(52, 211, 153, 0.15);
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: 25px auto 0;
+  padding: 0 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--accent-neon);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  margin-bottom: 10px;
+}
+
+h1 { font-size: 2.2rem; margin: 0 0 10px 0; }
+.hero p { color: var(--text-muted); font-size: 1.05rem; }
+
+/* Cards & Course List */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h2 { color: var(--accent-neon); margin-top: 0; }
+
+/* Course Header SVG Art (100% Reliable Graphics) */
+.course-banner {
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.course-banner svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(6, 17, 13, 0.85);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Buttons & Controls */
+.action-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s;
+  margin-top: 10px;
+}
+
+.glow-btn {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #ffffff;
+}
+
+.outline-btn {
+  background: transparent;
+  color: var(--accent-neon);
+  border: 1px solid var(--accent-neon);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.modern-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 320px;
+  outline: none;
+}
+
+.status-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--accent-neon);
+  padding: 12px;
+  border-radius: 6px;
+  color: var(--accent-neon);
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-2col { grid-template-columns: 1fr; }
+  .navbar { flex-direction: column; gap: 10px; }
+}
+
+/* Arcade Canvas */
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+canvas {
+  background-color: #022c22;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  max-width: 100%;
+}
