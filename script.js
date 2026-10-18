@@ -1,3 +1,11 @@
+// Backup photo if any external image link ever fails to load
+const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&auto=format&fit=crop";
+
+function handleImageError(img) {
+  img.onerror = null; // Prevents infinite loops
+  img.src = FALLBACK_IMAGE;
+}
+
 // Poll #1 Logic: Agree or Disagree
 let agreeVotes = 142;
 let disagreeVotes = 28;
