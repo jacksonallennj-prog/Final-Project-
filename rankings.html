@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NJ Golf Hub | Rankings & Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">⛳ NJ GOLF HUB</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="public-courses.html">Public Courses</a>
+      <a href="private-courses.html">Private Clubs</a>
+      <a href="rankings.html" class="active">Rankings & Arcade</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero">
+      <div class="hero-badge">LEADERBOARDS & GAMES</div>
+      <h1>NJ Top 10 Rankings & Community Polls</h1>
+      <p>Cast your vote on the rankings, submit your favorite courses, and play on the range!</p>
+    </header>
+
+    <!-- Side-by-Side Rankings 1-10 -->
+    <div class="grid-2col">
+      <div class="card">
+        <h2>🔒 Top 10 Private Clubs</h2>
+        <ol style="padding-left: 20px;">
+          <li>Pine Valley Golf Club</li>
+          <li>Baltusrol (Lower Course)</li>
+          <li>Somerset Hills Country Club</li>
+          <li>Plainfield Country Club</li>
+          <li>Ridgewood Country Club</li>
+          <li>Baltusrol (Upper Course)</li>
+          <li>Hollywood Golf Club</li>
+          <li>Bayonne Golf Club</li>
+          <li>Galloway National</li>
+          <li>Liberty National</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⛳ Top 10 Public Courses</h2>
+        <ol style="padding-left: 20px;">
+          <li>Ballyowen Golf Club</li>
+          <li>Neshanic Valley</li>
+          <li>Seaview (Bay Course)</li>
+          <li>Twisted Dune Golf Club</li>
+          <li>Atlantic City Country Club</li>
+          <li>Architects Golf Club</li>
+          <li>Heron Glen Golf Course</li>
+          <li>Berkshire Valley</li>
+          <li>Hominy Hill Golf Course</li>
+          <li>McCullough's Emerald Links</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Poll 1: Do you agree? -->
+    <div class="card">
+      <h2>📊 Community Poll: Do you agree with these rankings?</h2>
+      <p>Click below to cast your vote on our Top 10 lists:</p>
+      <div style="display: flex; gap: 10px;">
+        <button class="action-btn glow-btn" onclick="votePoll(true)">👍 Yes, Spot On!</button>
+        <button class="action-btn outline-btn" onclick="votePoll(false)">👎 No, Needs Work</button>
+      </div>
+      <div id="poll-result" class="status-box" style="display:none;"></div>
+    </div>
+
+    <!-- Poll 2: User Opinion Input -->
+    <div class="card">
+      <h2>📝 Submit Your Favorite NJ Golf Course</h2>
+      <p>What is your personal #1 favorite golf course in New Jersey?</p>
+      <div>
+        <input type="text" id="user-course-input" placeholder="e.g. Twisted Dune" class="modern-input">
+        <button class="action-btn glow-btn" onclick="submitSuggestion()">Submit Suggestion</button>
+      </div>
+      <div id="suggestion-result" class="status-box" style="display:none;"></div>
+    </div>
+
+    <!-- Driving Range Game -->
+    <div class="card">
+      <h2>🏌️ 2D Driving Range Game</h2>
+      <p>Click <strong>SWING CLUB</strong> to hit balls down the fairway towards target greens!</p>
+
+      <div style="display: flex; gap: 20px; margin-bottom: 10px;">
+        <div><strong>LAST DRIVE:</strong> <span id="last-drive" style="color: var(--accent-neon);">0 YDS</span></div>
+        <div><strong>TOTAL SCORE:</strong> <span id="total-score" style="color: var(--accent-neon);">0</span></div>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="game-canvas" width="500" height="250"></canvas>
+      </div>
+
+      <button class="action-btn glow-btn" style="width:100%; margin-top:15px;" onclick="swing()">⛳ SWING CLUB!</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
